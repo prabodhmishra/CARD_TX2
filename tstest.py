@@ -11,7 +11,7 @@ while 1:
     os.system('cat /sys/devices/gpu.0/load >> ~/dash_files/log.txt')
 
     # Number of decoded files
-    os.system('ls -1 ./soundfiles16/ | wc -l > ~/dash_files/num_files.txt')
+    os.system('ls -1 ./soundfiles/ | wc -l > ~/dash_files/num_files.txt')
     os.system('ls -1 ./logs/ | wc -l >> ~/dash_files/num_files.txt') 
     
     time.sleep(1)
