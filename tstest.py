@@ -3,18 +3,21 @@ import signal
 import os
 import time
 
+f = open("~/device_num.txt", "r")
+
+device_num = f.read()
 
 while 1:
     # tegra stats
-    os.system('~/tegrastats -once | grep RAM > ~/dash_files/log.txt')
+    os.system('~/tegrastats -once | grep RAM > ~/device' + device_num + '/log.txt')
     # GPU usage
-    os.system('cat /sys/devices/gpu.0/load >> ~/dash_files/log.txt')
+    os.system('cat /sys/devices/gpu.0/load >> ~/device' + device_num + '/log.txt')
 
     # Number of decoded files
-    os.system('ls -1 ./soundfiles/ | wc -l > ~/dash_files/num_files.txt')
-    os.system('ls -1 ./logs/ | wc -l >> ~/dash_files/num_files.txt') 
+    os.system('ls -1 ./soundfiles/ | wc -l > ~/device' + device_num + '/num_files.txt')
+    os.system('ls -1 ./logs/ | wc -l >> ~/device' + device_num + '/num_files.txt') 
     
     time.sleep(1)
 
-	# os.system('sshpass -p "123456" scp log.txt mjwoo@198.21.159.113:/Users/mjwoo/PycharmProjects/CARD_dashboard')
+    os.system('scp -r ~/device' + device_num + ' mjwoo@172.22.44.52:/Users/mjwoo/PycharmProjects/CARD_dashboard')
 
