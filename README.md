@@ -1,9 +1,9 @@
 # CARD_TX2
 This repo will be used to setup the required files, folders and scripts on the TX2s for the CARD project.
 
-1. **tstest.py**
+1. **send_stats.py**  ~~tstest.py~~  
  
-   This file is used to collect data and send files needed as input to the Dashboard
+   This file is used to collect data and send files needed as input to the Dashboard. 
       
 2. **logs**
    
