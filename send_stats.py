@@ -19,4 +19,4 @@ while 1:
     
     time.sleep(1)
 
-    os.system('scp -r ~/device' + device_num + ' mjwoo@192.169.1.200:/Users/mjwoo/PycharmProjects/CARD_dashboard')
+    os.system('scp -r ~/device' + device_num + ' mjwoo@198.21.152.178:/Users/mjwoo/PycharmProjects/CARD_dashboard')
