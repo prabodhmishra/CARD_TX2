@@ -9,7 +9,7 @@ start = datetime.datetime.now()
 os.system("ffmpeg -f alsa -i hw:2 -f segment -segment_time 05 -loglevel quiet -ar 16000 soundfiles16/audio_%04d.wav &")
 
 notifier = inotify.adapters.Inotify()
-notifier.add_watch('/home/nvidia/card/soundfiles16')
+notifier.add_watch('/home/nvidia/CARD_TX2/soundfiles16')
 
 for event in notifier.event_gen():
     # print "working..."
