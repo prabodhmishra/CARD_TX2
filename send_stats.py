@@ -13,8 +13,8 @@ if len(sys.argv) != 4:
 username = str(sys.argv[1])
 loc = str(sys.argv[1]) + '@' + str(sys.argv[2])
 path = str(sys.argv[3])
-#testpath = loc + ':/Users/' + username + '/' + path
-#print 'Argument List:', testpath
+testpath = loc + ':/Users/' + username + '/' + path
+print 'Sending files to: ', testpath
 
 f = open("/home/nvidia/device_num.txt", "r")
 
