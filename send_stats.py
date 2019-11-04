@@ -1,7 +1,20 @@
+#!/usr/bin/python
+
 import subprocess
 import signal
 import os
 import time
+import sys
+
+if len(sys.argv) != 4:
+    print 'Error!!! Incorrect number of arguments:', len(sys.argv), 'arguments passed.'
+    print 'eg. python send_stats.py username IP_address directory_path'
+
+username = str(sys.argv[1])
+loc = str(sys.argv[1]) + '@' + str(sys.argv[2])
+path = str(sys.argv[3])
+#testpath = loc + ':/Users/' + username + '/' + path
+#print 'Argument List:', testpath
 
 f = open("/home/nvidia/device_num.txt", "r")
 
@@ -29,4 +42,5 @@ while 1:
 
     time.sleep(1)
 
-    os.system('scp -r ~/device' + device_num + ' mjwoo@198.21.158.154:/Users/mjwoo/PycharmProjects/CARD_dashboard_github')
+    #os.system('scp -r ~/device' + device_num + ' mjwoo@198.21.158.154:/Users/mjwoo/PycharmProjects/CARD_dashboard_github')
+    os.system('scp -r ~/device' + device_num + ' ' + loc + ':/Users/' + username + '/' + path)
