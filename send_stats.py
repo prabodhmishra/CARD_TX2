@@ -10,7 +10,7 @@ if len(sys.argv) == 3:
     path = 'PycharmProjects/CARD_dashboard_github'
 elif len(sys.argv) == 4:
     path = str(sys.argv[3])
-else
+else:
     print 'Error!!! Incorrect number of arguments:', len(sys.argv), 'arguments passed.'
     print 'eg. python send_stats.py username IP_address directory_path'
     exit()
