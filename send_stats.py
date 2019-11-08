@@ -6,7 +6,7 @@ import os
 import time
 import sys
 
-if len(sys.argv) != 3 or len(sys.argv) != 4:
+if len(sys.argv) != 3 and len(sys.argv) != 4:
     print 'Error!!! Incorrect number of arguments:', len(sys.argv), 'arguments passed.'
     print 'eg. python send_stats.py username IP_address directory_path'
     exit()
