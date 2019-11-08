@@ -33,7 +33,7 @@ while 1:
 
     audlogfiles = os.popen('ls -1 ./logs/ | wc -l').read()
     cnt_audlogs = int(audlogfiles[:-1])
-    new_files = cnt_audlogs - last_sent
+    new_files = (cnt_audlogs - 1) - last_sent
     if new_files > 0:
         os.system('rm ~/device' + device_num + '/asr/*')
         for x in range(new_files):
