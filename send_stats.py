@@ -10,7 +10,7 @@ if len(sys.argv) != 3 or len(sys.argv) != 4:
     print 'Error!!! Incorrect number of arguments:', len(sys.argv), 'arguments passed.'
     print 'eg. python send_stats.py username IP_address directory_path'
     exit()
-elif len(sys.argv) = 3:
+elif len(sys.argv) == 3:
     testpath = 'PycharmProjects/CARD_dashboard_github'
     
 username = str(sys.argv[1])
