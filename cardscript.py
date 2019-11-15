@@ -6,7 +6,7 @@ import datetime
 
 start = datetime.datetime.now()
 
-os.system("ffmpeg -f alsa -i hw:2 -f segment -segment_time 30 -loglevel quiet -ar 16000 soundfiles16/audio_%04d.wav &")
+os.system("ffmpeg -f alsa -i hw:2 -f segment -segment_time 10 -loglevel quiet -ar 16000 soundfiles16/audio_%04d.wav &")
 
 notifier = inotify.adapters.Inotify()
 notifier.add_watch('/home/nvidia/CARD_TX2/soundfiles16')
@@ -24,6 +24,6 @@ for event in notifier.event_gen():
                 # os.system("free -m | awk 'NR==2{printf \"Memory Usage: %s/%sMB (%.2f%%)\\n\", $3,$2,$3*100/$2 }'")
                 # os.system("top -bn1 | grep load | awk '{printf \"CPU Load: %.2f\\n\", $(NF-2)}'")
                 os.system("ffmpeg -i soundfiles16/" + tempaudio + " -loglevel quiet -ac 1 -ar 8000 soundfiles08/" + tempaudio)
-                templog = tempaudio[:-4] + ".log"
-                os.system("./decode.sh soundfiles08/" + tempaudio + " >> logs/" + templog)
+                # templog = tempaudio[:-4] + ".log"
+                # os.system("./decode.sh soundfiles08/" + tempaudio + " >> logs/" + templog)
             tempaudio = event[3]
