@@ -47,4 +47,4 @@ while 1:
     time.sleep(1)
 
     #os.system('scp -r ~/device' + device_num + ' mjwoo@198.21.158.154:/Users/mjwoo/PycharmProjects/CARD_dashboard_github')
-    os.system('scp -r ~/device' + device_num + ' ' + loc + ':/home/' + username + '/' + path)
+    os.system('scp -r ~/device' + device_num + ' ' + loc + ':/Users/' + username + '/' + path)
